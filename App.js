@@ -1,12 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import Tabs from './navigation/tabs';
+import {NavigationContainer} from '@react-navigation/native'
+import * as SystemUI from 'expo-system-ui';
+import { CardContextProvider } from './components/Context';
+SystemUI.setBackgroundColorAsync('white')
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <CardContextProvider>
+      <NavigationContainer>
+          <Tabs/>
+      </NavigationContainer>
+    </CardContextProvider>
   );
 }
 
@@ -17,4 +23,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  
 });
