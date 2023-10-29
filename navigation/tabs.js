@@ -2,6 +2,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Test from "../components/Test";
 import Create from "../components/Create";
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { Platform } from "react-native";
 
 const Tab = createBottomTabNavigator()
 const Tabs = () => {
@@ -9,10 +10,10 @@ const Tabs = () => {
         <Tab.Navigator
             screenOptions={({route}) => ({
                 tabBarStyle: {
-                  height: 90,
+                  height: Platform.OS === 'ios' ? 90 : 70,
+                  position:"relative",
                   backgroundColor: '#31374A',
                 },
-        
                 headerShown: false,
                 tabBarShowLabel: true,
                 tabBarIcon: ({ focused, color, size }) => {
@@ -30,7 +31,6 @@ const Tabs = () => {
                     }
                     
         
-                    // You can return any component that you like here!
                     return <Ionicons name={iconName} size={size} color={color}/>;
                   },
                   tabBarActiveTintColor: 'white',

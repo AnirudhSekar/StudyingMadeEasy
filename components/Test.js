@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import {SafeAreaView, Text, Dimensions, View, TextInput, StyleSheet, ScrollView, TouchableOpacity} from 'react-native'
+import {SafeAreaView, Text, Dimensions, View, TextInput, StyleSheet, ScrollView, TouchableOpacity, Platform} from 'react-native'
 import { CardContext } from './Context'
 const Test = () => {
     const {cards, questions, answers} = useContext(CardContext)
@@ -71,7 +71,7 @@ const Test = () => {
     }
     
     return (
-        <SafeAreaView style={{backgroundColor:"#fff"}}>
+        <SafeAreaView style={{backgroundColor:"#fff", paddingTop:Platform.OS === 'android' ? 30 : 0}}>
             <ScrollView style={{height: Dimensions.get('window').height-200}}>
             
             <Text style = {styles.heading}>Test</Text>

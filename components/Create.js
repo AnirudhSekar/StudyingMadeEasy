@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import {View, ScrollView, StyleSheet, Text, SafeAreaView, TextInput, TouchableOpacity, FlatList, Dimensions, useWindowDimensions, Alert} from 'react-native'
+import {View, ScrollView, StyleSheet, Text, SafeAreaView, TextInput, TouchableOpacity, FlatList, Dimensions, useWindowDimensions, Alert, Platform} from 'react-native'
 import { CardContext } from './Context'
 
 const Create = () => {
@@ -88,7 +88,7 @@ const Create = () => {
     );
     return (
 
-        <SafeAreaView style={{paddingLeft:15, backgroundColor:"#fff", width:Dimensions.get('window').width, height:Dimensions.get('window').height}}>
+        <SafeAreaView style={{paddingTop: Platform.OS === "android"? 40 : 0, paddingLeft:15, backgroundColor:"#fff", width:Dimensions.get('window').width, height:Dimensions.get('window').height}}>
             <View style={{paddingLeft:30, paddingRight:30}}>
             <Text style={styles.heading}>Create</Text>
             <Text style={styles.title}>Your Questions</Text>
