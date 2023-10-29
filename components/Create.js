@@ -59,7 +59,6 @@ const Create = () => {
         setCards(updatedCards)
     } 
     const renderItem = ({ item, index }) => (
-
         <SafeAreaView style={{flexDirection:'row', padding:10}}>
             <View style={styles.task}>
             <Text style={{fontSize:20, padding:20}} >{index+1}.</Text>
@@ -84,7 +83,6 @@ const Create = () => {
         
         
         </SafeAreaView>
-
     );
     return (
 
@@ -118,7 +116,7 @@ const Create = () => {
                 renderItem={renderItem}
                 keyExtractor={(item, index) => index.toString()}
                 numColumns={1}
-                style={{flex:1}}
+                
                 scrollEnabled={true}
             />
             </View>

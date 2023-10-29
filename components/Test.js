@@ -72,9 +72,10 @@ const Test = () => {
     
     return (
         <SafeAreaView style={{backgroundColor:"#fff", paddingTop:Platform.OS === 'android' ? 30 : 0}}>
-            <ScrollView style={{height: Dimensions.get('window').height-200}}>
-            
             <Text style = {styles.heading}>Test</Text>
+            
+            <ScrollView style={{height: Platform.OS === 'android' ? Dimensions.get('window').height / 2:Dimensions.get('window').height-200}}>
+            
             {
                 checkForEmptyValue()
             }
